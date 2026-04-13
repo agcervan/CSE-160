@@ -1,0 +1,53 @@
+<!-- Angel Cervantes CSE 160 Assignment 1: Painting -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Asgn 1: Painting</title>
+    </head>
+
+    <body onload="main()">
+        <canvas id="webgl" width="400" height="400">
+            Please use a browser that supports "canvas"
+        </canvas>
+
+        <script src="../lib/webgl-utils.js"></script>
+        <script src="../lib/webgl-debug.js"></script>
+        <script src="../lib/cuon-utils.js"></script>
+        <script src="Point.js"></script>
+        <script src="Triangle.js"></script>
+        <script src="Circle.js"></script>
+        <script src="asgn1.js"></script>
+
+        <br> </br>
+        <button type="button" id="clear">Clear Canvas</button>
+        <br> </br>
+
+        <label for="name">Drawing Mode:</label>
+        <br> </br>
+        <button type="button" id="point">Squares</button>
+        <button type="button" id="triangle">Triangles</button>
+        <button type="button" id="circle">Circles</button>
+
+        <br> </br>
+        <label for="name">Shape Color:</label>
+        <br> </br>
+
+        <label for="name">Red</label>
+        <input type="range" min="0" max="100" value="100" class="slider" id="red">
+        <label for="name">Green</label>
+        <input type="range" min="0" max="100" value="100" class="slider" id="green">
+        <label for="name">Blue</label>
+        <input type="range" min="0" max="100" value="100" class="slider" id="blue">
+
+        <br> </br>
+
+        <label for="name">Shape Size:</label>
+        <input type="range" min="5" max="50" value="0" class="slider" id="size">
+        <label for="name">(Circle) Segment Count:</label>
+        <input type="range" min="10" max="25" value="10" class="slider" id="seg">
+
+    </body>
+</html>
+
