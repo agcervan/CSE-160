@@ -1,0 +1,65 @@
+<!-- Angel Cervantes CSE 160 Assignment 1: Painting -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Asgn 2: 3D Blocky Animal</title>
+    </head>
+
+    <body onload="main()">
+        <canvas id="webgl" width="400" height="400">
+            Please use a browser that supports "canvas"
+        </canvas>
+
+        <script src="../lib/webgl-utils.js"></script>
+        <script src="../lib/webgl-debug.js"></script>
+        <script src="../lib/cuon-utils.js"></script>
+        <script src="../lib/cuon-matrix-cse160.js"></script>
+        <script src="Point.js"></script>
+        <script src="Triangle.js"></script>
+        <script src="Circle.js"></script>
+        <script src="Cube.js"></script>
+        <script src="asgn2.js"></script>
+        <script src="drawPeacock.js"></script>
+
+        <br> </br>
+
+        <button type="button" id="clear">Clear Canvas</button>
+
+        <br> </br>
+
+        <label for="name">Camera Angle</label>
+        <input type="range" min="0" max="300" value="5" class="slider" id="angleSlide">
+        
+        <br> </br>
+
+        <label for="name">Head</label>
+        <input type="range" min="-25" max="25" value="0" class="slider" id="angleHead">
+
+        <label for="name">Beak</label>
+        <input type="range" min="0" max="35" value="0" class="slider" id="angleBeak">
+
+        <br> </br>
+        
+        <label for="name">Wing Animation:</label>
+        <button type="button" id="wingON">ON</button>
+        <button type="button" id="wingOFF">OFF</button>
+
+        <br> </br>
+
+        <label for="name">Left Wing</label>
+        <input type="range" min="0" max="70" value="0" class="slider" id="angleLeftTopWing">
+
+        <label for="name">Right Wing</label>
+        <input type="range" min="0" max="70" value="0" class="slider" id="angleRightTopWing">
+        <br> </br>
+
+        <label for="name">Neck</label>
+        <input type="range" min="0" max="45" value="0" class="slider" id="angleNeck">
+        
+
+
+    </body>
+</html>
+
