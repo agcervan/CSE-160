@@ -1,19 +1,31 @@
 function drawPeacock() {    
 
     // Head and Face Stuff
+    var neck = new Cube();
+    neck.color = [0.15,0.3,1.0,1.0];
+    neck.matrix.setTranslate(-0.125,-0.02,-0.55);
+    neck.matrix.rotate(-g_neck,1,0,0);
+    var neckCoord = new Matrix4(neck.matrix);
+    neck.matrix.scale(0.2,0.4,0.15);
+    neck.matrix.translate(0,-0.25,0);
+    neck.render();
+
     var head = new Cube();
     head.color = [0.0,0.0,1.0,1.0];
     head.matrix.setTranslate(-0.23,0.3,-0.35);
-    head.matrix.rotate(-g_headAngle,1,0,0);
+    head.matrix = neckCoord;
+    head.matrix.rotate(g_headAngle,1,0,0);
     var headCoord = new Matrix4(head.matrix);
     head.matrix.scale(0.4,0.4,-0.45);
+    head.matrix.translate(-0.25,0.6,-0.55);
     head.render();
 
     var leftEye = new Cube();
     leftEye.color = [0.0,0.0,0.0,1.0];
     leftEye.matrix = headCoord;
     leftEye.matrix.scale(0.05,0.05,0.05);
-    leftEye.matrix.translate(1.75,4,-10);
+    //leftEye.matrix.translate(1.75,4,-10);
+    leftEye.matrix.translate(-0.3,9,-5);
     leftEye.render();
 
     var rightEye = new Cube();
@@ -49,7 +61,8 @@ function drawPeacock() {
     TopBeak.matrix = headCoord;
     var TopBeakCoord = new Matrix4(TopBeak.matrix);
     TopBeak.matrix.scale(2,1,2.5);
-    TopBeak.matrix.translate(-1.2,-2,-0.6);
+    //TopBeak.matrix.translate(-1.2,-2,-0.6);
+    TopBeak.matrix.translate(-1.2,-2,-0.5);
     TopBeak.render();
 
     var BotBeak = new Cube();
@@ -59,7 +72,8 @@ function drawPeacock() {
     BotBeak.matrix.rotate(-270,1,0,0);
     BotBeak.matrix.rotate(-g_beakAngle,1,0,0);
     BotBeak.matrix.scale(2,2,0.5);
-    BotBeak.matrix.translate(-1.2,-0.5,4.5);
+    //BotBeak.matrix.translate(-1.2,-0.5,4.5);
+    BotBeak.matrix.translate(-1.2,-0.2,4.5);
     BotBeak.render();
 
     /*
@@ -78,14 +92,14 @@ function drawPeacock() {
     BotBeak.matrix.scale(0.07,0.03,0.1);
     BotBeak.render();
     */
-
+/*
     var neck = new Cube();
     neck.color = [0.15,0.3,1.0,1.0];
-    neck.matrix.setTranslate(-0.125,0.05,-0.55);
+    neck.matrix.setTranslate(-0.125,-0.02,-0.55);
     neck.matrix.rotate(-g_neck,1,0,0);
     var neckCoord = new Matrix4(neck.matrix);
-    neck.matrix.scale(0.2,0.35,0.15);
-    neck.render();
+    neck.matrix.scale(0.2,0.4,0.15);
+    neck.render();*/
 
     // Body and Wing Stuff
     var chest = new Cube();

@@ -46,6 +46,7 @@ var g_startTime = performance.now()/1000.0;
 var g_seconds = performance.now()/1000.0 - g_startTime;
 
 var g_wingAnimation = false;
+var g_movement = false;
 
 //let g_selectedSeg = 10;
 var g_shapesList = [];
@@ -115,10 +116,13 @@ function connectVariablesToGLSL() {
 
 function addActionsForHtmlUI(){
     // Clear dat
-    document.getElementById('clear').onclick = function() {g_shapesList = []; renderScene();};
+    //document.getElementById('clear').onclick = function() {g_shapesList = []; renderScene();};
 
     document.getElementById('wingON').onclick = function() {g_wingAnimation = true;};
     document.getElementById('wingOFF').onclick = function() {g_wingAnimation = false; };
+
+    document.getElementById('MoveON').onclick = function() {g_movement = true;};
+    document.getElementById('MoveOFF').onclick = function() {g_movement = false; };
 
     // Size and Segment stuff
     document.getElementById('angleSlide').addEventListener('mousemove', function() {g_globalAngle = this.value; renderScene();});
@@ -179,17 +183,37 @@ function tick(){
 
 function updateAnimationAngles() {
     if (g_wingAnimation) {
-        g_leftTopWing =(20*Math.sin(g_seconds));
-        g_rightTopWing =(20*Math.sin(g_seconds));
+        g_leftTopWing =(15*Math.sin(2*g_seconds));
+        g_rightTopWing =(20*Math.sin(2*g_seconds));
+    }
+
+    if (g_movement) {
+        g_beakAngle = (5*Math.sin(4*g_seconds));
+        g_headAngle = (5*Math.sin(2*g_seconds));
+        //g_neck = (5*Math.sin(2*g_seconds));
     }
 }
 
 function renderScene() {
+    var startTime = performance.now();
+
     var globalRotMat = new Matrix4().rotate(g_globalAngle,0,1,0);
     gl.uniformMatrix4fv(u_GlobalRotationMatrix, false, globalRotMat.elements);
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
     drawPeacock();
 
+    var duration = performance.now() - startTime;
+    sendTextToHTML("ms: " + Math.floor(duration) + " fps: " + Math.floor(1000/duration)/10, "numdot");
+
+}
+
+function sendTextToHTML(text, htmlID) {
+    var htmlElm = document.getElementById(htmlID);
+    if (!htmlElm) {
+        console.log("Failed to get " + htmlID + " from HTML");
+        return;
+    }
+    htmlElm.innerHTML = text;
 }
 
