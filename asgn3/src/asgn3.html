@@ -1,0 +1,63 @@
+<!-- Angel Cervantes CSE 160 Assignment 3: 3D Blocky World -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Asgn 3: 3D Blocky World</title>
+    </head>
+
+    <body onload="main()">
+        <div style="display: flex; align-items: right; gap: 20px;">
+        <canvas id="webgl" width="500" height="500">
+            Please use a browser that supports "canvas"
+        </canvas>
+<header>
+  <h1>"Ball Pitt"</h1>
+  <p> Ball pitt that showcases different textures! </p>
+ <br>
+  <p>
+        Move: W - Forward, S - Backward, A - Left, D - Right
+            <br>
+            <br>
+        Perspective Change: Q - Left, E - Right
+            <br>
+            <br>
+            <br>
+        Sky - Textured Sky Block
+            <br>
+            <br>
+        Ground - Green Solid Plane
+            <br>
+            <br>
+        32x32 Border Wall - Textured Log Blocks
+            <br>
+            <br>
+        Various "Balls" - Textured Cherry Cloud, Purple Noise, and Mango Skin
+        </p>
+</header>
+ 
+        </div>
+
+        <script src="../lib/webgl-utils.js"></script>
+        <script src="../lib/webgl-debug.js"></script>
+        <script src="../lib/cuon-utils.js"></script>
+        <script src="../lib/cuon-matrix-cse160.js"></script>
+        <script src="Point.js"></script>
+        <script src="Triangle.js"></script>
+        <script src="Circle.js"></script>
+        <script src="Cube.js"></script>
+        <script src="asgn3.js"></script>
+        <script src="drawPeacock.js"></script>
+        <script src="Camera.js"></script>
+
+
+        <br> </br>
+        <p id="numdot"> ms: -- fps: -- </p>
+
+        <label for="name">Camera Angle</label>
+        <input type="range" min="0" max="300" value="5" class="slider" id="angleSlide">
+
+    </body>
+</html>
+
