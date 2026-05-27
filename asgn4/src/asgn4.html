@@ -1,0 +1,75 @@
+<!-- Angel Cervantes CSE 160 Assignment 4: Lighting -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Asgn 4: Lighting</title>
+    </head>
+
+    <body onload="main()">
+        <div style="display: flex; align-items: right; gap: 20px;">
+        <canvas id="webgl" width="500" height="500">
+            Please use a browser that supports "canvas"
+        </canvas>
+<header>
+  <h1>Assignment 4:</h1>
+  <p> Ball pitt [World] integrated that showcases different textures with lighting. </p>
+ <br>
+  <p>
+        Move Camera: W - Forward, S - Backward, A - Left, D - Right
+            <br>
+            <br>
+        Perspective Change: Q - Left, E - Right
+            <br>
+            <br>
+            <br>
+        <label for="name">Auto Light Movement: </label>
+        <button type="button" id="lightMOn">Move</button>
+        <button type="button" id="lightMOff">Don't Move</button>
+        <br> </br>
+        <label for="name">Manuel Light Movement: [Best to turn off "Auto Light Movement" first]</label>
+        <br> </br>
+        Light X <input type="range" min="-250" max="250" value="0" class="slider" id="lightSlideX">
+        Light Y <input type="range" min="-250" max="250" value="0" class="slider" id="lightSlideY">
+        Light Z <input type="range" min="-250" max="250" value="0" class="slider" id="lightSlideZ">
+
+        </p>
+</header>
+ 
+        </div>
+
+        <script src="../lib/webgl-utils.js"></script>
+        <script src="../lib/webgl-debug.js"></script>
+        <script src="../lib/cuon-utils.js"></script>
+        <script src="../lib/cuon-matrix-cse160.js"></script>
+        <script src="Point.js"></script>
+        <script src="Triangle.js"></script>
+        <script src="Circle.js"></script>
+        <script src="Cube.js"></script>
+        <script src="asgn4.js"></script>
+        <script src="drawPeacock.js"></script>
+        <script src="Camera.js"></script>
+        <script src="Sphere.js"></script>
+
+
+        
+        <p id="numdot"> ms: -- fps: -- </p>
+
+        <label for="name">Camera Angle</label>
+        <input type="range" min="0" max="300" value="5" class="slider" id="angleSlide">
+
+        <br> </br>
+
+        <label for="name">Normal:</label>
+        <button type="button" id="normalOn">Normal On</button>
+        <button type="button" id="normalOff">Normal Off</button>
+
+        <label for="name">Light:</label>
+        <button type="button" id="lightOn">Light On</button>
+        <button type="button" id="lightOff">Light Off</button>
+        <br> </br>
+
+    </body>
+</html>
+
