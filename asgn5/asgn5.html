@@ -1,0 +1,72 @@
+<!-- Angel Cervantes CSE 160 Assignment 5 -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Asgn 5</title>
+    </head>
+
+    <body onload="main()">
+        <div style="display: flex; align-items: right; gap: 20px;">
+        <canvas id="webgl" width="400" height="400">
+            Please use a browser that supports "canvas"
+        </canvas>
+
+    <header>
+        <h1>Assignment 5</h1>
+        <p id="numdot">ms: -- fps: --</p>
+        
+        <p> Bonus: A slight recreation of Asgn 4 where you can control light movement and normal shaders. <br> <br>
+         Skybox: 360 Sky texture<br>
+         3 types of shapes: Cylinder, Sphere (1 moving), Cube (1 textured)<br>
+         3D Model: Watering Well<br>
+         Light Sources: Ambient Light, Directional Light, Hemisphere Light <br>
+         20 Shapes: 1 ground, 6 spheres, 7 cubes, 6 Cylinders<br>
+        <p>
+            Camera Controls: <br>
+            W - Forward, S - Backward, A - Left, D - Right
+            <br>
+            Mouse drag - Perspective Change, Scroll - Zoom In/Out
+        </p>
+
+        <label>Camera Angle</label>
+        <input type="range" min="0" max="300" value="5" id="angleSlide">
+        <br>
+
+        <label>Auto Light Movement:</label>
+        <button type="button" id="lightMOn">Move</button>
+        <button type="button" id="lightMOff">Don't Move</button>
+        <br>
+
+        <label>Light:</label>
+        <button type="button" id="lightOn">Light On</button>
+        <button type="button" id="lightOff">Light Off</button>
+        <br>
+
+        <label>Light X</label>
+        <input type="range" min="-500" max="500" value="100" id="lightSlideX">
+        <label>Light Y</label>
+        <input type="range" min="-500" max="500" value="300" id="lightSlideY">
+        <label>Light Z</label>
+        <input type="range" min="-500" max="500" value="100" id="lightSlideZ">
+        <br>
+
+        <label>Normal:</label>
+        <button type="button" id="normalOn">Normal On</button>
+        <button type="button" id="normalOff">Normal Off</button>
+        <br>
+
+    </header>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.184.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.184.0/examples/jsm/"
+        }
+    }
+    </script>
+    <script type="module" src="asgn5.js"></script>
+</body>
+</html>
